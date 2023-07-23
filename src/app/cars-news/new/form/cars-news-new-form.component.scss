@@ -1,0 +1,15 @@
+.cars-news-new-form__img-preview {
+  max-width: 10rem;
+  object-fit: contain;
+};
+
+.cars-news-new-form__img-preview-remove {
+  position: absolute;
+  top: -0.5rem;
+  left: calc(100% - 1.5rem);
+};
+
+.cars-news-new-form__img-preview-wrapper {
+  width: fit-content;
+  position: relative;
+};

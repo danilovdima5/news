@@ -1,0 +1,43 @@
+<app-modal title="Добавить новость">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input
+      class="form-control mb-4"
+      formControlName="title"
+      placeholder="Заголовок"
+    />
+
+    <textarea
+      class="form-control mb-4"
+      formControlName="description"
+      placeholder="Текст"
+    ></textarea>
+
+    <label *ngIf="!fileControl.value" class="btn btn-dashed mb-5">
+      <input
+        hidden
+        type="file"
+        accept=".png,.jpg,.webp,.jpeg"
+        (change)="onFileSelected($event)"
+      />
+      Загрузить изображение
+    </label>
+
+    <div
+      *ngIf="fileControl.value as value"
+      class="cars-news-new-form__img-preview-wrapper mb-5"
+    >
+      <img class="cars-news-new-form__img-preview" [src]="value" />
+
+      <button
+        class="cars-news-new-form__img-preview-remove btn btn-black-100 btn-ball btn-ball--sm"
+        (click)="deleteImage()"
+      >
+        <img src="assets/icons/close-16-white.svg" alt="close" />
+      </button>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+      Опубликовать новость
+    </button>
+  </form>
+</app-modal>

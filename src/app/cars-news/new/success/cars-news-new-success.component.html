@@ -1,0 +1,8 @@
+<app-modal title="Готово">
+  <div class="cars-news-new-success__value">
+    <img [src]="value.image" />
+    <p>{{ value.description }}</p>
+  </div>
+
+  <button (click)="onOkay()" class="btn btn-primary" type="button">Окей</button>
+</app-modal>

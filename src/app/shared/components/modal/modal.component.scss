@@ -1,0 +1,42 @@
+@import './../../../../assets/styles/variables';
+
+:host {
+  display: block;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 2rem;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.modal__wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.modal__header {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__close--outside {
+  display: none;
+}
+
+@media (min-width: calc($xs * 1.5)) {
+  .modal__close--inside {
+    display: none;
+  };
+
+  .modal__close--outside {
+    display: flex;
+  };
+
+  .modal {
+    padding: 2.5rem 3.5rem;
+  };
+}

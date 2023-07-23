@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
-import { ModalService } from '../modal/modal.service';
-import { NewsFormComponent } from '../new-news-form/new-news-form.component';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +9,7 @@ import { NewsFormComponent } from '../new-news-form/new-news-form.component';
 
     <p class="header__title"> ПОРТАЛ НОВОСТЕЙ </p>
 
-    <button class="btn btn-ball btn-ball--lg btn-black-100" (click)="openNewModal()" >
+    <button class="btn btn-ball btn-ball--lg btn-black-100" (click)="onNewBtnClick()" >
       <img src="assets/icons/plus.svg" alt="Добавить"/>
     </button>
   `,
@@ -18,12 +17,9 @@ import { NewsFormComponent } from '../new-news-form/new-news-form.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  private readonly modalService = inject(ModalService);
+  private readonly service = inject(HeaderService);
 
-  openNewModal() {
-    this.modalService.show({
-      class: NewsFormComponent,
-      data: null
-    });
+  onNewBtnClick() {
+    this.service.newBtnClicked.next();
   }
 }

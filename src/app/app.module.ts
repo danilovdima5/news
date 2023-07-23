@@ -8,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './core/header/header.component';
-import { ModalHostDirective } from './core/modal/modal-host.directive';
-import { ModalContainerComponent } from './core/modal/modal.component';
+import { ModalHostDirective } from './core/modal-container/modal-host.directive';
+import { ModalContainerComponent } from './core/modal-container/modal-container.component';
 
 @NgModule({
   declarations: [
