@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import { DAY_MONTH_YEAR_FORMAT } from '../models';
+import { DAY_MONTH_YEAR_FORMAT } from '../../core/models';
 
 @Component({
   selector: 'app-date-label',
@@ -15,7 +15,7 @@ import { DAY_MONTH_YEAR_FORMAT } from '../models';
       padding: 0.5rem 0.75rem;
       width: fit-content;
     }
-    `],
+  `],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [DatePipe]

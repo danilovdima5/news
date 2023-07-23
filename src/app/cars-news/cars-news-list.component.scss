@@ -4,7 +4,8 @@
 
 .cars-news-list__list {
   display: grid;
-  
+  justify-items: center;
+
   gap: 1.5rem;
   
   $item-width: 350px;
@@ -33,4 +34,9 @@
   line-clamp: 2; 
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.cars-news-list__loader {
+  width: 100px;
+  height: 100px;
 }
