@@ -1,0 +1,27 @@
+:host {
+  position: sticky;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 1rem;
+
+  @media (min-width: 376px) {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.header__title {
+  color: var(--black-100);
+  text-align: center;
+  
+  font: {
+    size: 1rem;
+    weight: 400
+  }
+
+  @media (min-width: 376px) {
+    font-size: 1.25rem;
+  }
+}
