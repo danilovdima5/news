@@ -1,0 +1,32 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &[disabled],
+  &.disabled {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      user-select: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.btn-black-100 {
+  border: none;
+  background: var(--black-100);
+}
+
+.btn-ball {
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.btn-ball--lg {
+  width: 3.75rem;
+}

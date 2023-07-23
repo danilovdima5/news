@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1440px;
+
+  @media (min-width: 376px) {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.hr {
+  position: fixed;
+  left: 0;
+  height: calc(2rem / 16);
+  width: 100vw;
+  background: var(--black-10);
+}
