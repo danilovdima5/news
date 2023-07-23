@@ -1,0 +1,23 @@
+<section class="modal__wrapper">
+  <section class="modal">
+    <div class="modal__header">
+      <h2 class="modal-title">{{ title }}</h2>
+
+      <button
+        class="modal__close--inside btn btn-black-05 btn-ball btn-ball--sm"
+        (click)="dismiss()"
+      >
+        <img src="assets/icons/close-16-black.svg" alt="close" />
+      </button>
+    </div>
+
+    <ng-content></ng-content>
+  </section>
+
+  <button
+    class="modal__close--outside btn btn-transparent btn-ball btn-ball--lg"
+    (click)="dismiss()"
+  >
+    <img src="assets/icons/close-24.svg" alt="close" />
+  </button>
+</section>

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { CarsNewsListService } from './cars-news-list.service';
+import { CardNewsPageComponent } from '../cars-news-page.abstract';
 
 @Component({
   selector: 'app-cars-news-list',
@@ -10,7 +11,7 @@ import { CarsNewsListService } from './cars-news-list.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [CarsNewsListService]
 })
-export class CarsNewsListComponent {
+export class CarsNewsListComponent extends CardNewsPageComponent {
   private readonly __service = inject(CarsNewsListService);
 
   public readonly mainList = toSignal(this.__service.mainList$, {
@@ -23,11 +24,7 @@ export class CarsNewsListComponent {
 
   public readonly isLoading = toSignal(this.__service.isLoading$);
 
-  ngOnInit() {
-    this.__service.selfMadeList$.subscribe(console.log);
-  }
-
-  goToNextPage() {
+  public goToNextPage() {
     this.__service.goToNextPage();
   }
 }
