@@ -1,18 +1,55 @@
 :host {
   display: block;
-  margin: 0 auto;
-  padding: 1rem;
+}
+
+.root-element {
   max-width: 1440px;
 
+  margin: {
+    left: auto;
+    right: auto;
+  };
+
+  padding: {
+    left: 1rem;
+    right: 1rem;
+  };
+
   @media (min-width: 376px) {
-    padding: 1.5rem 2rem;
+    padding: {
+      left: 1.5rem;
+      right: 1.5rem;
+    };
+  }
+}
+
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+
+  padding-top: 1rem;
+
+  @media (min-width: 376px) {
+    padding-top: 1.5rem;
+  }
+}
+
+.pages {
+  margin-bottom: 1rem;
+
+  @media (min-width: 376px) {
+    margin-bottom: 1.5rem;
   }
 }
 
 .hr {
-  position: fixed;
-  left: 0;
   height: calc(2rem / 16);
-  width: 100vw;
   background: var(--black-10);
+
+  margin: 1rem 0;
+
+  @media (min-width: 376px) {
+    margin: 1.5rem 0;
+  }
 }

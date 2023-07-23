@@ -5,6 +5,7 @@
   --black-80: #4B4B4B;
   --black-10: #E0E0E0;
   --black-05: #EBEBEB;
+  --bg-color: #F5F5F5;
 }
 
 * {
@@ -19,5 +20,5 @@ img {
 }
 
 body, html {
-  background: #F5F5F5;
+  background: var(--bg-color);
 }
