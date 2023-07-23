@@ -22,4 +22,10 @@
       </span>
     </p>
   </div>
+
+  <ng-container *ngIf="isLoading()">
+    <app-loader class="cars-news-list__loader" />
+    <app-loader class="cars-news-list__loader" />
+    <app-loader class="cars-news-list__loader" />
+  </ng-container>
 </section>

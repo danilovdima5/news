@@ -32,6 +32,10 @@ export class CarsNewsListService {
     );
   }
 
+  get isLoading$(): Observable<boolean> {
+    return this.__isLoading$.asObservable();
+  }
+
   goToNextPage(): void {
     if (this.__isLoading$.value) return;
 
