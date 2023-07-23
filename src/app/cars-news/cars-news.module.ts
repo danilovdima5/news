@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [{
   path: '',
-  loadComponent: () => import('./list/cars-news-list.component').then(c => c.CarsNewsListComponent)
+  loadChildren: () => import('./list/cars-news-list.module').then(m => m.CarsNewsListModule)
 },{
   path: ':id',
   loadComponent: () => import('./one/cars-news-one.component').then(c => c.CarsNewsOneComponent)
