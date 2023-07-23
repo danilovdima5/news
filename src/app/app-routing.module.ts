@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: 'cars-news',
-  loadComponent: () => import('./cars-news/cars-news-list.component').then(c => c.CarsNewsListComponent)
+  loadChildren: () => import('./cars-news/cars-news.module').then(c => c.CarsNewsModule)
 },{
   path: '**',
-  redirectTo: 'cars-news'
+  redirectTo: 'cars-news',
+  pathMatch: 'full'
 }];
 
 @NgModule({

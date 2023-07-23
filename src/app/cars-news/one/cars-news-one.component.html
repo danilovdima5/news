@@ -1,0 +1,15 @@
+<ng-container *ngIf="item$ | async as item">
+  <h1>{{ item.title }}</h1>
+
+  <app-date-label
+    class="cars-news-one__date"
+    [date]="item.publishedDate"
+  ></app-date-label>
+
+  <img [src]="item.titleImageUrl" [alt]="item.title" class="photo" />
+
+  <p>
+    {{ item.description }}
+    <a [href]="item.fullUrl" target="_blank">{{ item.fullUrl }}</a>
+  </p>
+</ng-container>

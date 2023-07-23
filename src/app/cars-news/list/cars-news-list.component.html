@@ -1,9 +1,13 @@
 <h1 class="cars-news-list__title">Автомобильные новости</h1>
 
 <section class="cars-news-list__list">
-  <div class="cars-news-list__item" *ngFor="let item of list(); last as last">
+  <div
+    class="cars-news-list__item"
+    *ngFor="let item of list(); last as last"
+    [routerLink]="[item.id]"
+  >
     <img
-      class="cars-news-list__item-image"
+      class="cars-news-list__item-image photo"
       [src]="item.titleImageUrl"
       [alt]="item.title"
     />

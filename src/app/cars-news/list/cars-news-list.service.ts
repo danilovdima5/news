@@ -1,29 +1,28 @@
 import { Injectable, inject } from '@angular/core';
 
-import { BehaviorSubject, Observable, Subject, catchError, map, of, pairwise, startWith, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of, switchMap, tap } from 'rxjs';
 
-import { CarsNewsService } from '../core/services/cars-news.service';
+import { CarsNewsService } from '../cars-news.service';
+import { ICarsNewsItemPreview } from './cars-news-list.model';
 
-import { ICarsNewsItem } from './cars-news.models';
 
 @Injectable()
 export class CarsNewsListService {
   private readonly __carsNewsService = inject(CarsNewsService)
 
-  private __currentPage$ = new BehaviorSubject(1);
+  private readonly __currentPage$ = new BehaviorSubject(1);
 
-  private __isLoading$ = new BehaviorSubject(false);
+  private readonly __isLoading$ = new BehaviorSubject(false);
 
-  private __cachedList: ICarsNewsItem[] = [];
+  private __cachedList: ICarsNewsItemPreview[] = [];
 
-  public get list$(): Observable<ICarsNewsItem[]> {
+  public get list$(): Observable<ICarsNewsItemPreview[]> {
     return this.__currentPage$.pipe(
       tap(() => this.__isLoading$.next(true)),
       switchMap(currentPage => {
-        return this.__carsNewsService.fetchConfig(currentPage);
+        return this.__carsNewsService.getList(currentPage);
       }),
-      map(config => config.news),
-      catchError(() => of([] as ICarsNewsItem[])),
+      catchError(() => of([])),
       map(result => [...this.__cachedList, ...result]),
       tap(result => {
         this.__cachedList = result;
