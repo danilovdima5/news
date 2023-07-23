@@ -13,11 +13,19 @@ import { CarsNewsListService } from './cars-news-list.service';
 export class CarsNewsListComponent {
   private readonly __service = inject(CarsNewsListService);
 
-  public readonly list = toSignal(this.__service.list$, {
+  public readonly mainList = toSignal(this.__service.mainList$, {
+    initialValue: []
+  });
+
+  public readonly selfMadeList = toSignal(this.__service.selfMadeList$, {
     initialValue: []
   });
 
   public readonly isLoading = toSignal(this.__service.isLoading$);
+
+  ngOnInit() {
+    this.__service.selfMadeList$.subscribe(console.log);
+  }
 
   goToNextPage() {
     this.__service.goToNextPage();

@@ -3,6 +3,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
 
 import { CarsNewsOneService } from './cars-news-one.service';
 import { DateLabelComponent } from '../../shared/components/date-label/date-label.component';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-cars-news-one',
@@ -14,5 +15,5 @@ import { DateLabelComponent } from '../../shared/components/date-label/date-labe
   imports: [NgIf, AsyncPipe, DateLabelComponent]
 })
 export class CarsNewsOneComponent {
-  public readonly item$ = inject(CarsNewsOneService).item$;
+  public readonly item = toSignal(inject(CarsNewsOneService).item$);
 }

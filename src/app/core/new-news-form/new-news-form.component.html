@@ -1,0 +1,63 @@
+<section class="new-news-form--wrapper">
+  <section class="new-news-form">
+    <div class="new-news-form--header">
+      <h2 class="modal-title">Добавить новость</h2>
+
+      <button
+        class="new-news-form__close--inside btn btn-black-05 btn-ball btn-ball--sm"
+        (click)="closeModal()"
+      >
+        <img src="assets/icons/close-16-black.svg" alt="close" />
+      </button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input
+        class="form-control mb-4"
+        formControlName="title"
+        placeholder="Заголовок"
+      />
+
+      <textarea
+        class="form-control mb-4"
+        formControlName="description"
+        placeholder="Текст"
+      ></textarea>
+
+      <label *ngIf="!fileControl.value" class="btn btn-dashed mb-5">
+        <input
+          hidden
+          type="file"
+          accept=".png,.jpg,.webp,.jpeg"
+          (change)="onFileSelected($event)"
+        />
+        Загрузить изображение
+      </label>
+
+      <div
+        *ngIf="fileControl.value as value"
+        class="new-news-form__img-preview-wrapper mb-5"
+      >
+        <img class="new-news-form__img-preview" [src]="value" />
+
+        <button
+          class="new-news-form__img-preview-remove btn btn-black-100 btn-ball btn-ball--sm"
+          (click)="deleteImage()"
+        >
+          <img src="assets/icons/close-16-white.svg" alt="close" />
+        </button>
+      </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+        Опубликовать новость
+      </button>
+    </form>
+  </section>
+
+  <button
+    class="new-news-form__close--outside btn btn-transparent btn-ball btn-ball--lg"
+    (click)="closeModal()"
+  >
+    <img src="assets/icons/close-24.svg" alt="close" />
+  </button>
+</section>

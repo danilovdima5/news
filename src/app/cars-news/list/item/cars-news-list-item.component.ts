@@ -11,6 +11,7 @@ import { ICarsNewsItemPreview } from '../cars-news-list.model';
 export class CarsNewsListItemComponent {
   @Input({ required: true }) item!: ICarsNewsItemPreview;
   @Input({ required: true }) isLast!: boolean;
+  @Input({ required: true }) isSelfMade!: boolean;
 
   @Output() intersected = new EventEmitter<void>();
 }
