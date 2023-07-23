@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://webapi.autodoc.ru/api/news';
