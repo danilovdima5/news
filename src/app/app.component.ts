@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
+import { ModalService } from './core/modal/modal.service';
+import { ModalHostDirective } from './core/modal/modal-host.directive';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +16,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     <section class="pages root-element">
       <router-outlet></router-outlet>
     </section>
+
+    <app-modal-container></app-modal-container>
   `,
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {}
+export class AppComponent {
+
+}

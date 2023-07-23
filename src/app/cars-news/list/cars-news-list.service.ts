@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 
-import { BehaviorSubject, Observable, catchError, map, of, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, catchError, combineLatest, map, of, switchMap, tap } from 'rxjs';
 
 import { CarsNewsService } from '../cars-news.service';
 import { ICarsNewsItemPreview } from './cars-news-list.model';
@@ -16,7 +16,7 @@ export class CarsNewsListService {
 
   private __cachedList: ICarsNewsItemPreview[] = [];
 
-  public get list$(): Observable<ICarsNewsItemPreview[]> {
+  public get mainList$(): Observable<ICarsNewsItemPreview[]> {
     return this.__currentPage$.pipe(
       tap(() => this.__isLoading$.next(true)),
       switchMap(currentPage => {
@@ -31,11 +31,15 @@ export class CarsNewsListService {
     );
   }
 
-  get isLoading$(): Observable<boolean> {
+  public get selfMadeList$(): Observable<ICarsNewsItemPreview[]> {
+    return this.__carsNewsService.selfMadeList$;
+  }
+
+  public get isLoading$(): Observable<boolean> {
     return this.__isLoading$.asObservable();
   }
 
-  goToNextPage(): void {
+  public goToNextPage(): void {
     if (this.__isLoading$.value) return;
 
     const currentPage = this.__currentPage$.value;

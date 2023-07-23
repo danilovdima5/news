@@ -22,11 +22,41 @@
   background: var(--black-100);
 }
 
+.btn-black-05 {
+  border: none;
+  background: var(--black-05);
+}
+
+.btn-primary {
+  @extend .btn-black-100;
+  border-radius: 3.75rem;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  width: 100%;;
+}
+
 .btn-ball {
   border-radius: 50%;
-  aspect-ratio: 1;
 }
 
 .btn-ball--lg {
   width: 3.75rem;
+  height: 3.75rem;
+}
+
+.btn-ball--sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn-transparent {
+  background: transparent;
+  border: none;
+}
+
+.btn-dashed {
+  border: calc(1rem / 16) dashed var(--link);
+  color: var(--link);
+  border-radius: 3.75rem;
+  padding: 1rem 0.5rem;
 }

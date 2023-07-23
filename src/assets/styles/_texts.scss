@@ -4,13 +4,27 @@
   line-height: 1.3;
 }
 
-h1 {
-  font-size: 2rem;
-
-  @media (min-width: calc($xs * 2)) {
-    font-size: 4rem;
-  }
-
+h1, h2, h3 {
   font-weight: $fw_bold;
   line-height: 1;
+}
+
+.page-title {
+  text-align: start;
+  
+  font-size: $h2;
+
+  @media (min-width: $xs) {
+    font-size: $h1;
+  }
+}
+
+.modal-title {
+  text-align: start;
+
+  font-size: $h3;
+
+  @media (min-width: $xs) {
+    font-size: $h2;
+  }
 }

@@ -1,4 +1,23 @@
-<div class="cars-news-list-item" [routerLink]="[item.id]">
+<div
+  *ngIf="isSelfMade"
+  class="cars-news-list-item cars-news-list-item--self-made"
+>
+  <ng-container *ngTemplateOutlet="body"></ng-container>
+</div>
+
+<div *ngIf="!isSelfMade" class="cars-news-list-item" [routerLink]="[item.id]">
+  <ng-container *ngTemplateOutlet="body"></ng-container>
+
+  <span
+    *ngIf="isLast"
+    intersectionObservable
+    (intersected)="intersected.emit()"
+    [oneTime]="true"
+  >
+  </span>
+</div>
+
+<ng-template #body>
   <img
     class="cars-news-list-item__image photo"
     [src]="item.titleImageUrl"
@@ -10,12 +29,4 @@
   <p class="cars-news-list-item__description">
     {{ item.description }}
   </p>
-
-  <span
-    *ngIf="isLast"
-    intersectionObservable
-    (intersected)="intersected.emit()"
-    [oneTime]="true"
-  >
-  </span>
-</div>
+</ng-template>

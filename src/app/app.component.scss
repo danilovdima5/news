@@ -4,22 +4,6 @@
   display: block;
 }
 
-.root-element {
-  margin: 0 auto;
-
-  padding: {
-    left: 1rem;
-    right: 1rem;
-  };
-
-  @media (min-width: $xs) {
-    padding: {
-      left: 1.5rem;
-      right: 1.5rem;
-    };
-  }
-}
-
 .header-wrapper {
   position: sticky;
   top: 0;
