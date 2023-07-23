@@ -1,0 +1,14 @@
+@import './../../../../assets/styles/variables';
+
+:host {
+  background: var(--black-05);
+  border-radius: 1.5625rem;
+  padding: 0.5rem 0.75rem;
+  width: fit-content;
+
+  font-size: $fs_4;
+
+  @media (min-width: $xs) {
+    font-size: $fs_2;
+  }
+}

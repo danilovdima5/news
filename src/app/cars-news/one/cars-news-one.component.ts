@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AsyncPipe, NgIf } from '@angular/common';
 
 import { CarsNewsOneService } from './cars-news-one.service';
-import { DateLabelComponent } from './../../shared/components/date-label.component';
+import { DateLabelComponent } from '../../shared/components/date-label/date-label.component';
 
 @Component({
   selector: 'app-cars-news-one',

@@ -1,31 +1,12 @@
 <h1 class="cars-news-list__title">Автомобильные новости</h1>
 
 <section class="cars-news-list__list">
-  <div
-    class="cars-news-list__item"
+  <app-cars-news-list-item
     *ngFor="let item of list(); last as last"
-    [routerLink]="[item.id]"
-  >
-    <img
-      class="cars-news-list__item-image photo"
-      [src]="item.titleImageUrl"
-      [alt]="item.title"
-    />
-
-    <app-date-label [date]="item.publishedDate" />
-
-    <p class="cars-news-list__item-description">
-      {{ item.description }}
-
-      <span
-        *ngIf="last"
-        intersectionObservable
-        (intersected)="goToNextPage()"
-        [oneTime]="true"
-      >
-      </span>
-    </p>
-  </div>
+    [isLast]="last"
+    [item]="item"
+    (intersected)="goToNextPage()"
+  ></app-cars-news-list-item>
 
   <ng-container *ngIf="isLoading()">
     <app-loader class="cars-news-list__loader" />

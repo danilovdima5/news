@@ -1,3 +1,5 @@
+@import './../assets/styles/variables';
+
 :host {
   display: block;
 }
@@ -10,7 +12,7 @@
     right: 1rem;
   };
 
-  @media (min-width: 376px) {
+  @media (min-width: $xs) {
     padding: {
       left: 1.5rem;
       right: 1.5rem;
@@ -25,7 +27,7 @@
 
   padding-top: 1rem;
 
-  @media (min-width: 376px) {
+  @media (min-width: $xs) {
     padding-top: 1.5rem;
   }
 }
@@ -33,7 +35,7 @@
 .pages {
   margin-bottom: 1rem;
 
-  @media (min-width: 376px) {
+  @media (min-width: $xs) {
     margin-bottom: 1.5rem;
   }
 }
@@ -44,7 +46,7 @@
 
   margin: 1rem 0;
 
-  @media (min-width: 376px) {
+  @media (min-width: $xs) {
     margin: 1.5rem 0;
   }
 }

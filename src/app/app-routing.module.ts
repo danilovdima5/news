@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
   path: 'cars-news',
-  loadChildren: () => import('./cars-news/cars-news.module').then(c => c.CarsNewsModule)
+  loadChildren: () => import('./cars-news/cars-news.module').then(m => m.CarsNewsModule)
 },{
   path: '**',
   redirectTo: 'cars-news',
