@@ -9,9 +9,11 @@ import { HeaderService } from './header.service';
 
     <p class="header__title"> ПОРТАЛ НОВОСТЕЙ </p>
 
-    <button class="btn btn-ball btn-ball--lg btn-black-100" (click)="onNewBtnClick()" >
-      <img src="assets/icons/plus.svg" alt="Добавить"/>
-    </button>
+    <div>
+      <button class="header__new-btn btn btn-ball btn-ball--lg btn-black-100" (click)="onNewBtnClick()" >
+        <img src="assets/icons/plus.svg" alt="Добавить"/>
+      </button>
+    </div>
   `,
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

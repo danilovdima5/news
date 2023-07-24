@@ -15,6 +15,7 @@ export class ModalsService {
   }
 
   show(value: IModalValue): void {
+    this.dismiss();
     this.modalToShow$.next(value);
   }
 
