@@ -11,11 +11,15 @@
     object-fit: contain;
   }
 
+  > p {
+    font-size: $fs_2;
+
+    @media (min-width: calc($xs * 1.5)) {
+      font-size: $fs_1;
+    }
+  }
+
   @media (min-width: calc($xs * 1.5)) {
     flex-direction: row;
-
-    // > * {
-    //   width: 50%;
-    // }
   }
 }
